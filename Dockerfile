@@ -1,7 +1,7 @@
-FROM ruby:2.5.3-alpine3.8
+FROM ruby:2.5.3-stretch
 
 # Install Ruby and Rails dependencies
-RUN apk --no-cache --update add ruby-dev build-base libxml2-dev curl-dev libnsl-dev curl wget bash
+RUN apt-get update && apt-get install -y build-essential libxml2-dev libcurl4-openssl-dev curl wget
 
 ADD http://pegasus.isi.edu/montage/Montage_v3.3_patched_4.tar.gz /
 RUN tar zxvf Montage_v3.3_patched_4.tar.gz && \
