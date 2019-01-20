@@ -15,5 +15,6 @@ ENV PATH $PATH:/Montage_v3.3_patched_4/bin
 
 RUN gem build hyperflow-amqp-executor.gemspec && \
     gem install hyperflow-amqp-executor
+RUN mkdir /workdir
 
 CMD hyperflow-amqp-executor
